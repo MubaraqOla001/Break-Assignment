@@ -79,3 +79,42 @@ considering all these four approaches the website should be accessible and let t
 # Theory
 
 # Engineering Best Practise
+
+
+## Class Ten Memory and Variables
+# Theory
+1. 
+a. **Scope:**
+**let** is used in declaring variable and variable declared using let is block scope meaning that accessing the variable outside the scope will not work and throw an error,however declaring it in a global scope will make it accessible anywhere in the code because it is global.
+
+**const** is also used in declaring variable and works in similar manner with **let** in term of scope.
+
+**var** is used in declaring variable but variable declared with var is function scoped meaning if a block code is declared inside the function it can be accessed within the function even though it is another scope inside that function however let and const does not have that priviledge.
+
+b. **Hoisting:** 
+**let** and **const** are hoisted. To understand this how javascript works must be explained javascript works generally in two phases the first phase is like a set up phase where javascript scan through the entire page and create a memory for variable declared and function. Now variable declared with let and const are hoisted meaning lift to the up of the page and javascript know the variable before the execution phase which is the second phase but then when  a variable declared with let or const is accessed before  its initialization it throws an error because at the set up phase javacript create a memory for the variable as unitialized and put it in a temporary dead zone.
+let a;
+console.log(a) // throw an error
+a = 5;
+however it is not the case for **var** at set up phase the variable declined with var and is unitialized is given a value of undefined.
+var a;
+console.log(a) // undefined
+a = 5;
+c. **reassignment:**
+let and var can be reassigned but reassigning variable with const will throw an errow.
+let a = 5
+a = 7
+console.log(a) // 7
+const a = 5;
+a = 6 
+console.log(a) // error.
+
+ const make variable binding immutable cannot be reassigned such is the case for object and array too for example
+const person = ["Mubaraq", "Dev" "timelessDev"];
+person = ["Sodiq", "Ola", "Kola"] // will throw an error. however those value the array contains can be changed because it does not lock those variable rather it locks their reference which is the person. so it is allowed to add a value to existing array for example person.push("almajiriDev"); will add that to the end of the existing array and person[0] = "Bola" will change the first array in to bola.
+
+2. Temporal Dead Zone as briefly explaine when talking about hoisting let and const is a time between variable declaration with let and const and the initialization of the variable making the variable unaccessible before its initialization. 
+It exists so as to help us catch bug at early stage instead of assigning undefined value to it like var would do. 
+let a;
+console.log(a) // throw an error
+a = 5;
