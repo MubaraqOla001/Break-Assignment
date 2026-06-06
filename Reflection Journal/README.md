@@ -80,6 +80,23 @@ considering all these four approaches the website should be accessible and let t
 
 # Engineering Best Practise
 
+## Class Nine Advanced Tailwind and Responsive Design
+# Theory
+1. Tailwind breakpoint system is a responsive approach that tailwind make use to make website responsive to different screensize it is just like using @media query in custom css. and it is mobile first design, meaning that the style applied with no breakpoint attach will be added to the smaller screen and when the breakpoint is applied it applies to that size and higher but not lower, considering md: it starts at a screen size of 768px and higher. 
+To create a custom breakpoint of 1200px you have to define it in tailwind.configuration.js using this apporach
+modules.exports = {
+    theme: {
+        extend: {
+            screens{
+                'largeScreen': 1200px
+            }
+        }
+    }
+}
+Then with that you can use it with other built in breakpoint but had it been extend is not included in the configuration is like telling the tailwind to ignore the inbuilt breakpoint and make use of the one you created.
+
+2. Arbitrary value in tailwind are the value that are used in the custom css but used in the tailwind using [] without adding space or with space replaced with underscore _ and without modifying the tailwind configuration. And I will use the arbitrary values in tailwind when is a quick one time used and I don't plan in reusing it but if it is reusable I will rather add it to the rule book I mean the tailwing.configuration.js
+
 
 ## Class Ten Memory and Variables
 # Theory
@@ -118,3 +135,8 @@ It exists so as to help us catch bug at early stage instead of assigning undefin
 let a;
 console.log(a) // throw an error
 a = 5;
+
+3. Firstly memory in javascript can be grouped into two which is the heap and stack and both store different types of data. the stack memory store primitive data like numbers, strings, boolean and the likes while the heap memory store data like array and object. Now considering the code given name = "Sarah", age = 22, scores(the pointer which is pointing to the array not the array itself), greet = function and result = greet + undefined(because person is not defined as an array or object and we are trying to access what is not defined and the name defined is just normal primitive string.) will all be stored in the stack, and the array [90, 85, 88] will be stored in the heap.
+
+## Product thinking
+1. for display value, the operator, and the previous operand all of these will be declared with const for the main reason that they will be a dynamic value and change according to the user want so declaring them with const means that they will not be able to change.
