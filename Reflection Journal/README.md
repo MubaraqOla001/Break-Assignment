@@ -46,3 +46,36 @@ And lastly, `<h1> to <h6>`  are treated differently so that the user can scan th
 <p>This contain some specific API links under the universal API link</p>
 
 # Class Three Modern Assets & Linking
+## Theory
+1. Firstly, an hero image must be an image of high quality and relatively big in size(visually) to catch the viewer attention as soon as they get in page but then before they get into the page if the image size is much(large mb) it will take a while to load giving the page to even be ranked low in SEO. To solve this problem I will make use of a website called **Squoosh** to reduce the the size from 5mb to a reasonable size like kb and still retail the quality of the image. and the steps I will take include;
+paste the image into the squoosh and resize it and convert it from PNG to **AVIF and WEBP** reason for choosing this format is because WEBP have a considerably reduced size and high quality and support by all browsers but then AVIF reduce size of an image even better than WEBP but doesn't get support like webp across browsers but then it supported among major browsers. so I will use the two together serving the format of Avif first then if the browser does not support that then it can make use of the webp, by using the html tag 
+``<picture><source srcset="img.avif"></source><source srcset="img.webp"></source></picture>.``
+
+2. Just like I used it in the scenario above, that is just what srcset is meant for it is an attribute used inside img or source to provide different formats and sizes for different screensize and give the device of choosing the format and best size that suits it making the web a resposive layout.
+
+3. when using target="_blank" this allow the link to open the destination of the link in another window, now considering you providing link to another website, that means when the user of your website click the link they move from your website to another website opening in another tab, without rel="noopener" your website is under security risk. In a simple term imagine a door located in a crowd environment but open to a private room, and you come out of the secret room leaving it wide open this gives room for the crowd to enter into the supposed to be secret room without any hindrance, now use this analogy your website is a secret room and the links that link to other websites from website is the door, the the rel="noopener" is the padlock to your secret room, without the padlock everyone has access to your secret room your website so with that potential can hack into your website and get user information that might have been given to your website because of the trust your website has earned from them and the hacker may now have access to their information.
+
+## Engineering Thinking
+1. 
+Displaying 50 product images on a page is a lot that can slow down the website and allow user to download large size of images my optimization strategy will be:
+
+a. I will set the loading of the images to lazy so that not all images load all at once but load once the user scroll to them but the first grid row containing upto 5 or 6 elements depending on the grid, will have loading of eager and fetchpriority of high so they load on first entering into the page.
+
+b. I will set the format to avif and have webp as the fallback, my choice of avif format is because it reduce the file size better than anyother available format, and my choice of webp is because it is 100% supported by browsers so if a browser does not support avif it will support webp, and this will make the rendering of the web page fast because small size is rendered fast.
+
+c. I will use CDN content delivery network to store my images instead of the user accessing the image from the local storage if it is placed on CDN then it can be easily accessible using the principle of edge computing as explained earlier.
+
+d. I will also make my image to be availabe in different dimension to fit different screen size so that a mobile phone user with only 300px phone width will not download and image of 2000width I can use the website called cloudinary to do this.
+considering all these four approaches the website should be accessible and let the user have best experience visiting such web page.
+
+## Class Four Modern Forms and User Experience
+# Theory
+
+# Product Thinking
+
+# Engineering Best Practise
+
+## Class Five The CSS Engine - Box Model and Specificity
+# Theory
+
+# Engineering Best Practise
