@@ -2,7 +2,7 @@
 ## Theory
 1. 
 
-2. firstly, when users use browser they are either in request of an information or making a post, so to solve this browser send an http request to relevant data, however this http cannot move on its own it requires a kind of transit that transport the data or request to server and bring back http response in form of html, css and javascript to the browser, and this transit used to be **TCP, But it has a problem of being slow** considering the fact that the data move using a single path and if one information at the fore front is not ready but the one behind it, is ready it has to wait until the one at the begining ready before it can propel, this cause web page to stall and delay, **QUIC replaced the TCP just to solve that problem of stalling by providing multiple path for data to travel** and if one data is not ready it will not stop the other data from delivering and with that website is now fast.
+2. firstly, when users use browser they are either in request of an information or making a post, so to solve, browser send an http request to relevant server, however this http cannot move on its own it requires a kind of transit that transport the data or request to server and bring back http response in form of html, css and javascript to the browser, and this transit used to be **TCP, But it has a problem of being slow** considering the fact that the data move using a single path and if one information at the fore front is not ready but the one behind it, is ready it has to wait until the one at the begining ready before it can propel, this cause web page to stall and delay, **QUIC replaced the TCP just to solve that problem of stalling by providing multiple path for data to travel** and if one data is not ready it will not stop the other data from delivering and with that website is now fast.
 
 3. 
 
@@ -70,8 +70,20 @@ considering all these four approaches the website should be accessible and let t
 
 ## Class Four Modern Forms and User Experience
 # Theory
+1. With client only validation, which means using javascript to validate the entry this will be very okay for the user because it gives the user instant feedback that email entered is invalid and the user can correct the mistake at once, that happens before the form get to the server.
+Sever-side only validation only validate the form after it has been submitted to server and if the server find the email invalid it returns the form but this will be slower compared to client side because the data will have to travel all the way down to the server before it gives back response.  Merging both together is actually a very good approach because it strengthened the validation method, if the client side is bypassedc, then the server side will catch the error.
+
+2. autocomplete attribute is an attribute that make web page form filling easy for user imagine a user filling up a form and suddenly the user lost Internet connection it will be very pleasing to the user if he can just tap the input field and the previously filled entry us suggested to him, instead of going through the hassle of starting from the start they get to input their information by just a tap to two taps that's incredible and make user fall in love with the website. 
+Different values of autocomplete includes 
+autocomplete="name"
+autocomplete="email"
+autocomplete="password"
+autocomplete="fullName"
+autocomplete="current password"
 
 # Product Thinking
+1. Considering it is 5 steps at every entering the data will be saved locally to the browser local storage so that when the Internet is lost the user can get the data back instantly, at every step too if there's an error in the entering it should be shown right away as the user press next so that all of the error will not be compounded at the end of the form and that makes everything overwhelming to the user, as a developer you need to be user centered and also when the user is offline the browser should detect immediately and output some friendly message like you are offline but your entries are saved, and also when the user get back online the browser should detect back too immediately all messages the user typed offline should be synced then.
+2. I would use a native `<select>` if I need I want full accessibility as the browser will make it accessible since it is part of the html element so the browser will understand it the best without much stress and also if I'm not considering flexibility as it will only be a normal select behaviour and it requires less development time, however the custom dropdown depend solely on your judgement you  make the accessibily features yourself and it is very flexible as you put in there what you desire you are its creator but then it takes time to design.
 
 # Engineering Best Practise
 
