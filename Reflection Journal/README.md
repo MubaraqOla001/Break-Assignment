@@ -91,6 +91,7 @@ The creator of tailwind choose utility classes over semantic based classed becau
 1. Switching to tailwind is actually good for our project though it might look rough and unfortable at first but then you will get to appreciate it as you move forward in learning it and it easy to maintain in the sense that if there is something wrong with a particular html element instead of scanning through the custom html file and changing a style that might actually affect other things the style is applied to unknowingly you only open your html file and navigate to the element and change the style without panicking it might have effect on other element.
 
 # Engineering  Thinking
+A card component was built using tailwind and I differentiate between the defaut and hover state by applying desired style using hover: and with that I chage the background color the text color and shadow and transition I used ease-in-out to make the transition seem natural used a duration of 300 to not make it too sudden. I created another component for the featured card to make it stand out and chatch the user attention by scaling it up to 105 so it a little bigger and make the border color looks like that of the hover state. I made a choice of creating another component for the featured component it is not a state that can be added to the default state just like hover.
 
 
 ## Class Nine Advanced Tailwind and Responsive Design
