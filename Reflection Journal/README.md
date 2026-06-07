@@ -1,6 +1,8 @@
 # Class One Web Ecosystem
 ## Theory
 1. 
+![How a browser takes html](Dom.jpeg)
+This matter for a web developer because it show the web developer how browser actually convert code to visible web page and allow him to be the controller of his own page instead of a micro manager that goes with the flow of the browser, you decide how your page looks where each DOM nodes should be placed on the screen build a responsive website and a faster one at that.
 
 2. firstly, when users use browser they are either in request of an information or making a post, so to solve, browser send an http request to relevant server, however this http cannot move on its own it requires a kind of transit that transport the data or request to server and bring back http response in form of html, css and javascript to the browser, and this transit used to be **TCP, But it has a problem of being slow** considering the fact that the data move using a single path and if one information at the fore front is not ready but the one behind it, is ready it has to wait until the one at the begining ready before it can propel, this cause web page to stall and delay, **QUIC replaced the TCP just to solve that problem of stalling by providing multiple path for data to travel** and if one data is not ready it will not stop the other data from delivering and with that website is now fast.
 
@@ -89,8 +91,50 @@ autocomplete="current password"
 
 ## Class Five The CSS Engine - Box Model and Specificity
 # Theory
+1. 
+![CSS Box](CSSBox.jpeg)
+if there is margin-bottom and margin-top just like this scenario browser does not merge both together instead it takes the larger size and use it. So in this case as portray the margin-tip: 30px wins because of margin collapsing.
+
+2. Id(#) takes higher ranking in specificity hierarchy, follows by class(.) and follows by element. so when Id is present it wins when Id is not present class wins when css is not present then element wins.
+calculating the specificity of this .header nav ul li a
+(id,class, element)(0, 1, 4) since no Id is present so it is zero and class is only one so 1 and element is 4 so 4.
+nav a.active (0, 1, 1), .nav-links a (0, 1, 2) summing up numbers in each bracket this .header nav ul li a wins.
+
+3. cascade is rule CSS follow to apply style to an element incase there is different styles pointing to the same element CSS does not just choose randomly rather it follows some set of rules. which are;
+!important, specificity, and source order. so any element style and !important is put there overide any other rule and if that is not present specificity kicks in just like explained earlier then if they all have same specificity the the later css style applied. understanding this will save you lots of stress instead fighting a style because it is not applying just look at your css and find which one is over  riding it, and more reason why using !important is discouraged I mean it should be used with caution because it can make debugging stressing.
 
 # Engineering Best Practise
+1. if adding padding: 10px to an element makes it becomes wider than expected you should know the problem is from box-sizing because the default style is box-sizing: content-box, so when I set a width of 100px and padding of 10px the total width becomes 100px + 10px + 10px = 120px so that is where it looks wider than expected but let us say you set the box-sizing to border box that means the padding will be part of the width initially set and the width and will be the total width set just padding taking 20px of the total width the right and left padding.
+2. .content-box{
+        box-sizing: content-box;
+        width: 100px;
+        padding: 10px;
+}
+//The total width for this will be 120px just like the explanation given earlier.
+.content-box{
+        box-sizing: border-box;
+        width: 100px;
+        padding: 10px;
+}
+//The total width for this will be 100px just like the explanation given earlier.
+
+## Class Six Flexbox Mastery
+# Theory
+1. flex-grow: is a property used with flex to share the remaining space among contents of the flex.
+flex-shring: is a property used with flex to manage the limited space between contents of the flex.
+flex-basis: is a property of flex used to give the flex content an initial size before growing or shrinking occur.
+
+2. first align-items: stretch strech the flex items to the height of the container in the cross axis and it doesn't work if the items have fixed height, or the items has a fixed dimension like image.
+.containe{
+    display: flex;
+    align-items: stretch;
+}
+.fixed-item{
+    height: 20px;
+}
+
+in this scenario align-items: stretch will not work.
+# Engineering Thinking
 
 ## Class Eight Tailwind CSS Fundamental
 # Theory
