@@ -80,6 +80,19 @@ considering all these four approaches the website should be accessible and let t
 
 # Engineering Best Practise
 
+## Class Eight Tailwind CSS Fundamental
+# Theory
+1. Utility first simply means using a small, single-purpose css class in html to stlye instead of the custom css.
+The creator of tailwind choose utility classes over semantic based classed because it solves the problem of switching between files I mean between html files and css files, it also solve the problem of creating unending name in css just apply the class to element itself and you make it easy.
+
+2. Just in time compiler is like a smart machine in tailwind that helps generate the tailwind utility classes you used in your project only instead of downloading the whole tailwind classes framework it scan your project and and only attach the utility property you used. It affects the CSS file size in production because it keeps your file size small instead of downloading the whole library or dictionary of utility classes you only download that you used in your project and make your website faster.
+
+# Product Thinking
+1. Switching to tailwind is actually good for our project though it might look rough and unfortable at first but then you will get to appreciate it as you move forward in learning it and it easy to maintain in the sense that if there is something wrong with a particular html element instead of scanning through the custom html file and changing a style that might actually affect other things the style is applied to unknowingly you only open your html file and navigate to the element and change the style without panicking it might have effect on other element.
+
+# Engineering  Thinking
+
+
 ## Class Nine Advanced Tailwind and Responsive Design
 # Theory
 1. Tailwind breakpoint system is a responsive approach that tailwind make use to make website responsive to different screensize it is just like using @media query in custom css. and it is mobile first design, meaning that the style applied with no breakpoint attach will be added to the smaller screen and when the breakpoint is applied it applies to that size and higher but not lower, considering md: it starts at a screen size of 768px and higher. 
@@ -87,7 +100,7 @@ To create a custom breakpoint of 1200px you have to define it in tailwind.config
 modules.exports = {
     theme: {
         extend: {
-            screens{
+            screens:{
                 'largeScreen': 1200px
             }
         }
@@ -97,6 +110,31 @@ Then with that you can use it with other built in breakpoint but had it been ext
 
 2. Arbitrary value in tailwind are the value that are used in the custom css but used in the tailwind using [] without adding space or with space replaced with underscore _ and without modifying the tailwind configuration. And I will use the arbitrary values in tailwind when is a quick one time used and I don't plan in reusing it but if it is reusable I will rather add it to the rule book I mean the tailwing.configuration.js
 
+## Engineering Best Practice
+1. module.exports = {
+    darkMode:'class',
+    theme: {
+        extend: {
+            colors:{
+                primary:{
+                    default: #d9b9b9
+                    dark: #d33636
+                },
+                background:{
+                    light: #fff
+                    dark: #000
+                },
+                text:{
+                    light: #faf
+                    dark: rgb(103, 5, 103)
+                },
+            },
+        },
+    },
+};
+
+2. the html page is written You can check inside this folder.
+I used sm to represent small screen and md to represent medium screen and lg to represent large screen.
 
 ## Class Ten Memory and Variables
 # Theory

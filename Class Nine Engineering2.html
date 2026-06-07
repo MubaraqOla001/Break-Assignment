@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tailwind landing page</title>
+</head>
+<body>
+    <main>
+        <section  class="flex flex-col items-center py-4 gap-2 min-h-[100vh] justify-center">
+            <h1 class="text-3xl font-bold">Hero Section</h1>
+            <p class="">This is a hero section of a responsive website using tailwind only</p>
+            <button class="border border-black p-2 hover:bg-black hover:text-white">Visit the website</button>
+        </section>
+        <section class="px-4">
+            <h2 class="text-xl font-bold py-4">Feature Grid</h2>
+            <article class="grid pb-4 gap-10 sm:grid:cols-1 md:grid-cols-2 lg: lg:grid-cols-3">
+                <article>Grid One</article>
+                <article>Grid Two</article>
+                <article>Grid Three</article>
+            </article>
+        </section>
+        <section class="px-4">
+            <h2 class="text-lg font-bold">Pricing Table</h2>
+            <article class="flex justify-around pb-2 sm:text-sm md:text-lg lg:text-xl">
+                <h3 class="text-md font-semibold">Items</h3>
+                <h3 class="text-md font-semibold">Price</h3>
+            </article>
+            <article class="flex justify-around pb-2 sm:text-sm md:text-lg lg:text-xl">
+                <h3 class="text-md font-semibold">Orange</h3>
+                <p>#50</p>
+            </article>
+            <article class="flex justify-around pb-2 sm:text-sm md:text-lg lg:text-xl">
+                <h3 class="text-md font-semibold">Mango</h3>
+                <p>#100</p>
+            </article>
+            <article class="flex justify-around sm:text-sm md:text-lg lg:text-xl">
+                <h3 class="text-md font-semibold" >Apple</h3>
+                <p>#200</p>
+            </article>
+        </section>
+        <footer class="flex justify-around py-4">
+            <a href="#">About</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </footer>
+    </main>
+    
+</body>
+</html>
